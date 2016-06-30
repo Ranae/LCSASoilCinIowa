@@ -1,0 +1,18 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+I have been thinking more about that decomposition experiment.  We talked about it in the context of the models I'm planning to run with soilR, but I was thinking back a few years and remembered that I first thought of this experiment after seeing that root C:N ratios increase with depth and wondering, "What does that mean?"  Since everyone considers C:N in roots to be fixed with depth, how does this change our understanding of C dynamics with depth?
+
+This field incubation would allow us to quantify the effect of depth with all its inherent properties: temperature, moisture, and increasing C:N.  We have a bunch of models that can tell us what to expect based on temperature and moisture.  Some of the difference between what these models predict and what we actually measure will be attributable to C:N. 
+
+But this wouldn't be huge because we do already have ideas (and equations) of how C:N ratio affects decomposition, the problem is just that C:N ratio is assumed to be fixed across depth.  The story would be focused on placing these temp/moisture/C:N relationships in the context of depth.  Right now I have all the temp/moisture/CN data, but everything I want to say about what it means is speculation.  Given that the field environment will not be accurately represented without live plants, the results of the study will still be somewhat limited, but I can say more than I can say now. 
+
+At the very least, I think it will be a publishable study. At the very most, it could be a substantial contribution to our understanding of half of the world's soil C (found under 30 cm). 
+
+. . .and then, after having this dead area for three years, we can grow new plants in these spots and see how the presence of roots affects further decomposition of the "old" organic matter pool.  I think labeling the new plants could better help us at that point.    
+
+
+The effect of depth on decomposition and organic matter stabilization
