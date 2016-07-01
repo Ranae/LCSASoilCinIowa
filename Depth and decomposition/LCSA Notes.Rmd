@@ -1,6 +1,8 @@
 ---
 title: "R Notebook"
-output: html_notebook
+output:
+  pdf_document: default
+  html_notebook: default
 ---
 
 
@@ -23,4 +25,15 @@ Moisture
 POM
 C, N, and other carbohydrates?
 
-What effect does depth have on decomposition?  What is the greatest contributor to this effect?  
+O2 (sensors)
+DOC (lysimeters)
+CO2 (licor?)
+
+
+What effect does depth have on rate of decomposition?  What is the greatest contributor to this effect (temperature, moisture, O2, tissue quality)?
+
+What effect does depth have on C that remains in the soil?  Is this more dependent on temperature, moisture, tissue quality, soil texture, or soil C levels?
+
+Where does most C go?
+
+Depth
