@@ -19,4 +19,30 @@ Some questions:
 -   How does *residue quality* affect the proportions of organic matter lost as DOC, CO2, and fine-fraction POM?
 -   How does depth affect the proportion of organic matter lost as DOC and fine-fraction POM?
 
-This experiment Decomp rate DOC, CO2 O2, temp, moisture CN POM
+### What we know
+
+#### COBS differences between treatments
+
+One treatment minus (-) the other
+Red line is mean difference
+
+##### Water
+
+![](readme_files/figure-markdown_github/unnamed-chunk-2-1.png)
+
+##### Temperature
+
+![](readme_files/figure-markdown_github/unnamed-chunk-3-1.png)
+
+#### COBS differences between depths
+
+Value at 10 cm minus each depth
+Red line is mean difference
+
+##### Water
+
+![](readme_files/figure-markdown_github/unnamed-chunk-5-1.png)
+
+##### Temperature
+
+![](readme_files/figure-markdown_github/unnamed-chunk-6-1.png)
