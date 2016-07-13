@@ -22,7 +22,7 @@ Some questions:
 
 
 * How does depth affect rate of decomposition?  Is this consistent with current decomposition models?
-* How does _residue quality_ affect the proportions of organic matter lost as DOC, CO2, and fine-fraction POM?  
+* How does _residue quality_ affect the proportions of organic matter lost as DOC, CO2, and fine-fraction POM?    
 * How does depth affect the proportion of organic matter lost as DOC and fine-fraction POM?
 
 ###Protocol
