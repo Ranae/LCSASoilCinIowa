@@ -11,25 +11,39 @@ Depth is an emergent property that cannot be recreated in a laboratory, yet much
 
 This experiment seeks to examine the effect of depth on decomposition without physically controlling the components that make up depth and without creating an artificial environment such as that found inside litter bags. This examination will include analysis focused on the components that contribute to the depth effect.
 
-Some questions:
+Questions:
 
 -   How does depth affect rate of decomposition? Is this consistent with current decomposition models?
--   How does *residue quality* affect the proportions of organic matter lost as DOC, CO2, and fine-fraction POM?
--   How does depth affect the proportion of organic matter lost as DOC and fine-fraction POM?
 
 ### Protocol
 
-One subplot will be established in each continuous corn, fertilized prairie, and prairie plot. Subplots will be approximately 6 feet from the south and west borders. Subplots will be 5' x 5'. Each subplot will be created by first cutting down the existing vegetation using a weedeater and/or pruning shears. Vegetation will be allowed to grow back to ~ 8" then sprayed with glyphosate, then sprayed with glyphosate again. Two soil cores will be taken to a 1 m depth in each subplot. One of the holes created by the core will be used to install ECH2O temp and moisture sensors at 7.5, 30, 60, and as long as my arm depths. Subplots will then be covered with brown landscaping cloth, secured by edging that will go as deep as we can get it.
+One subplot will be established in each continuous corn, fertilized prairie, and prairie plot. Subplots will be approximately 6 feet from the south and west borders. Subplots will be 5' x 5'.
 
-### Plot design
+In the prairie treatments, each subplot will be created by first cutting down the existing vegetation using a weedeater and/or pruning shears. Vegetation will be allowed to grow back to ~ 8" then sprayed with glyphosate, then sprayed with glyphosate again after a couple days. Two soil cores will be taken to a 1 m depth in each subplot. The Giddings will also be used to install ECH2O temp and moisture sensors at 7.5, 30, 60, and as long as my arm cm depths. Subplots will then be covered with landscaping cloth, secured by edging that will go as deep as we can get it. Corn plots will be similar and span three rows, with the sampling focused on the middle row.
 
-![Plot design](plot%20design.png)
+Two cores will be taken at time 0, a few days after the last application of RoundUp. Cores will be split into 5 depth increments by centimeters -- 0-20, 20-40, 40-60, 60-80, 80-100 and bagged in the field. Bags will be weighed for bulk density and root-free soil will be removed from the samples for analysis of moisture content (bulk density), organic C, total N, and POM. The remainder of the sample will be elutriated and processed for root biomass. Root will also be processed for C, N, and possibly some other components.
+
+### Experimental design
+
+#### S is sensors, 4 cores in 2016, 2 in 2017, 2 in 2018
+
+<img src="Images/plot design subplot level.png" width="400px" />
+
+#### S is sensors, green is corn rows 4 cores in 2016, 2 in 2017, 2 in 2018
+
+<img src="Images/plot design subplot level maize.png" width="400px" />
+
+#### Placement within plots
+
+<img src="Images/plot design plot level.png" width="300px" />
+
+<img src="Images/plot design field level.png" width="600px" />
 
 ### Convincing image for why litter bags are bad
 
 ![Soil contact](root.png)
 
-### What we know about soil temperature and moisture
+### What we know about soil temperature and moisture from previous years
 
 #### COBS differences between treatments
 
