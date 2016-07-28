@@ -1,6 +1,8 @@
 The effect of depth on decomposition
 ================
 
+#### My public notebook -- details contained in folders above
+
 ### Why should we do this?
 
 Half of the world's organic carbon (C) is located below 20 cm, but the mechanisms behind the creation and retention of this organic C are unclear, especially considering that most organic C sources are concentrated above 20 cm or aboveground.
@@ -11,7 +13,7 @@ Depth is an emergent property that cannot be recreated in a laboratory, yet much
 
 This experiment seeks to examine the effect of depth on decomposition without physically controlling the components that make up depth and without creating an artificial environment such as that found inside litter bags. This examination will include analysis focused on the components that contribute to the depth effect.
 
-Questions:
+Question:
 
 -   How does depth affect rate of decomposition? Is this consistent with current decomposition models?
 
@@ -35,9 +37,14 @@ Two cores will be taken at time 0, a few days after the last application of Roun
 
 #### Placement within plots
 
-<img src="Images/plot design plot level.png" width="300px" />
+<img src="Images/plot design plot level.png" width="200px" />
 
 <img src="Images/plot design field level.png" width="600px" />
+
+Step 1. First cutting 7/27/16
+
+<img src="Images/selfie.jpg" width="300px" />
+<img src="Images/forbs.jpg" width="300px" /> <img src="Images/PF.jpg" width="300px" /> <img src="Images/before.jpg" width="300px" /> <img src="Images/after.jpg" width="300px" />
 
 ### Convincing image for why litter bags are bad
 

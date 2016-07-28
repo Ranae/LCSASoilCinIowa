@@ -8,7 +8,7 @@ output:
   word_document: default
 ---
 
-###Protocol
+
 One subplot will be established in each continuous corn, fertilized prairie, and prairie plot.  Subplots will be approximately 6 feet from the south and west borders. Subplots will be 5' x 5'.  
 
 In the prairie treatments, each subplot will be created by first cutting down the existing vegetation using a weedeater and/or pruning shears.  Vegetation will be allowed to grow back to ~ 8" then sprayed with glyphosate, then sprayed with glyphosate again after a couple days. Two soil cores will be taken to a 1 m depth in each subplot.  The Giddings will also be used to install ECH2O temp and moisture sensors at 7.5, 30, 60, and as long as my arm cm depths. Subplots will then be covered with landscaping cloth, secured by edging that will go as deep as we can get it. Corn plots will be similar and span three rows, with the sampling focused on the middle row. 
