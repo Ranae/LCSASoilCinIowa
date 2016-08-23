@@ -44,7 +44,7 @@ Two cores will be taken at time 0, a few days after the last application of Roun
 Step 1. First cutting 7/27/16
 
 <img src="Images/selfie.jpg" width="300px" />
-<img src="Images/forbs.jpg" width="300px" /> <img src="Images/PF.jpg" width="300px" /> <img src="Images/before.jpg" width="300px" /> <img src="Images/after.jpg" width="300px" />
+ <img src="Images/forbs.jpg" width="300px" /> <img src="Images/PF.jpg" width="300px" /> <img src="Images/before.jpg" width="300px" /> <img src="Images/after.jpg" width="300px" />
 
 ### Convincing image for why litter bags are bad
 
