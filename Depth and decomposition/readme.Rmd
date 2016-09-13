@@ -60,7 +60,7 @@ Step 1. First cutting 7/27/16
 
 
 ###Convincing image for why litter bags are bad
-![Soil contact](root.png)
+![Soil contact](Images/root.png)
 
 
 
