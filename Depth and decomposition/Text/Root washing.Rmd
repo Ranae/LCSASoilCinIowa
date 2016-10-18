@@ -1,0 +1,44 @@
+---
+title: "Root Washing"
+author: "Ranae Dietzel"
+date: "October 18, 2016"
+output: pdf_document
+---
+##A. Subsampling and Filling Elutriator Tubes
+1. Weigh and record the bag weight and bag ID.  
+2. Break up and mix around the soil.  
+3. Put **80-85** g of **root-free** soil in a paper bag. Don't need to record the weight. 
+4. Put **5-7** g of almost root-free soil on a tin and record the weight. 
+5. Use the rest of the soil to fill an elutriator tube.  
+    - First put a white label with ID and A, B, C in the tube.  
+    - Do not overpack the tube.  
+6. Paper bags go on the shelf to dry. Tin go on a tray to be taken to the oven. Elutriator tubes go in a bucket to be taken to the greenhouse.
+
+##B. Elutriation (removing silt and clay) 
+1. Take the buckets to the greenhouse -- cart use encouraged.  
+2. Load the tubes in the elutriator and make sure to turn the locks on the end.  
+3. Shut the lid and turn the elutriator on.  
+    - Make sure the water is on.
+    - **Make sure the drainage hose is going into the floor drain.  
+4. Run the machine for 3-4 hours. 
+5. Take the tubes out and bring them back to Agronomy Hall -- no cart needed.  
+6. Get the tubes completely dry by leaving in an oven at 50 C overnight.  
+7. Dump the sand/root mixture in a labeled plastic bag -- keep the white label too.
+
+##C. Removing sand  
+1. Start with sand/root mixture from plastic bag.  
+2. Fill a tub (~1 L) with water.  
+3. Dump the sand/root mixture into the tub and stir -- roots should float to the top.  
+4. Pour the water (but not the sand) through a sieve. Make sure white label goes in the sieve. 
+5. Repeat steps 3 & 4 twice (three times total).  
+6. Put sieves in the oven at 50 C. 
+
+##D. Removing (non-root) organic matter
+1. Take the sieves out of the oven.  
+2. Dump a sieve on a white paper.
+3. Grab most obvious roots and put them in a weighing tin.  
+4. Bend and shake the paper to separate the materials more. Rake through to get some roots out.  
+5. Set a time limit because we won't get every root.  
+6. Weigh the tin and put the roots in a labeled bag. 
+
+
