@@ -48,7 +48,7 @@ Step 1. First cutting 7/27/16
 
 ### Convincing image for why litter bags are bad
 
-![Soil contact](root.png)
+![Soil contact](Images/root.png)
 
 ### What we know about soil temperature and moisture from previous years
 
@@ -59,11 +59,11 @@ Red line is mean difference
 
 ##### Water
 
-![](readme_files/figure-markdown_github/unnamed-chunk-2-1.png)
+![](readme_files/figure-markdown_github/unnamed-chunk-2-1.jpeg)
 
 ##### Temperature
 
-![](readme_files/figure-markdown_github/unnamed-chunk-3-1.png)
+![](readme_files/figure-markdown_github/unnamed-chunk-3-1.jpeg)
 
 #### COBS differences between depths
 
@@ -72,8 +72,8 @@ Red line is mean difference
 
 ##### Water
 
-![](readme_files/figure-markdown_github/unnamed-chunk-5-1.png)
+![](readme_files/figure-markdown_github/unnamed-chunk-5-1.jpeg)
 
 ##### Temperature
 
-![](readme_files/figure-markdown_github/unnamed-chunk-6-1.png)
+![](readme_files/figure-markdown_github/unnamed-chunk-6-1.jpeg)

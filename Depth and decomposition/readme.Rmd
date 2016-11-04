@@ -1,6 +1,10 @@
 ---
 title: "The effect of depth on decomposition"
-output: github_document
+output:
+  github_document:
+    fig_width: 5
+    fig_height: 5
+    dev: jpeg
 ---
 
 ```{r setup, include=FALSE}
