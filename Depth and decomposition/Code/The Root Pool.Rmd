@@ -70,8 +70,18 @@ In the coming year, I will measure remaining mass of prairie, fertilized prairie
 I am using the Agricultural Production Systems Simulator (APSIM) for the model intercomparison and have a version of the model that is very well-calibrated for my study site for maize root decomposition. However, there have been several improvements made in the prairie version of APSIM and I am currently recalibrating the model for use in the model intercomparison. This should be done by the end of February, at which point I will move on to incorporating APSIM's structure with other widely-used soil carbon models to perform a model intercomparison using soilR, an R-based modeling platform.  
 
  
-#Brief project summary  
-The priority for the first year of the project was to terminate areas of prairie, fertilized prairie, and maize to create a pool of dead organic matter in the soil. After these plant systems reached peak root biomass, I cut 6 ft x 6 ft areas of vegetation and then allowed for some regrowth. When the areas became green again (except the maize), I applied glyphosate to permanently kill the vegetation in the area. I took soil cores to a depth of 1 meter (6 ft) and over the last few months have removed the soil and leaf residue from these samples, leaving only the roots. This serves as my initial measurement of root biomass in the three different treatments (Fig. 1). 
+#Brief project summary
+
+##Experimental plots 
+The priority for the first year was to establish experimental subplots used to study the decomposition of organic matter with different carbon and nitrogen contents at different soil depths. Previous work at this site has shown prairie, fertilized prairie, and maize roots have very different carbon and nitrogen content, but the roots must be dead to start decomposition and start this experiment. 
+
+I waited until plant systems reached peak root biomass and then measured 6 ft x 6ft areas in four replicates of three treatments (12 subplots overall). All vegetation was at least 5 ft tall at this point, so I used a gas-powered weed trimmer to mow all vegetation in these subplots. I then waited nine days for some vegetation to grow back and sprayed glyphosate to terminate vegetation in the area. I continued to check for new growth over the next three weeks, applying glyphosate two more times. 
+
+When all vegetation was terminated, I collected inital root samples to determine the starting mass of organic matter (dead roots) in the subplots. Root samples were collected by bringing a truck-mounted hydraulic soil probe with a 2 inch diameter shaft to each subplot and extracting two 6 ft long soil cores from each subplot. Each core was sectioned into 8 inch portions and bagged on-site. 
+
+Temperature and moisture are major factors in determining the rate of decomposition. We expect differences in temperature and moisture with soil depth. In order to quantify these differences, we installed soil moisture and temperature sensors at 3, 10, 20 and 30 inch depths in each subplot. Sensors were installed by using a gas-powered handheld auger to drill down to 2.5 ft and remove all the soil. Sensors were inserted into the soil profile and soil was replaced in the hole. In each subplot, sensors were plugged into a datalogger that was programmed to track moisture and temperature every hour. 
+
+To prevent new roots from entering the area, four plastic partitions per subplot were cut to the dimension of 6 ft long x 6 inches wide. Partitions will be installed in the soil in the spring.
 
 \includegraphics[width=230pt]{../Images/area.jpg}
 \includegraphics[width=174pt]{../Images/core.jpg}
@@ -120,9 +130,13 @@ Figure 1. Root mass at initiaton of experiment.
 
 \newpage
 
-The prairie experiments in which I am working have recently undergone a thorough analysis related to species community composition over the first six years of the experiment, performed by a colleague on the experiment. This new analysis, combined with improvements to the APSIM prairie model will allow me to make a very complete calibration of the model that will simulate changes in prairie functional groups over time, key to simulating both the proper organic matter inputs and soil environmental conditions needed to model long-term soil carbon dynamics. This, along with running a suite of other models, will help us determine how much organic matter needs to be added to Iowa soils in order to bring soils to a "restored" level. 
+##Organic matter simulations  
 
-The only changes made for the reporting year is the addition of materials to build partitions to place in the soil around the terminated areas to prevent new roots from growing into the dead-root areas. 
+I have previously made significant changes to a pasture model within the APSIM platform to create an APSIM prairie model. This prairie model is crucial to simulating changes in organic matter over long periods of time. In order to show that the results produced by this model are feasible, I am submitting the work for peer review and am currently working on a manuscript detailing model calibration while simultaneously calibrating the model due to a) new versions of the APSIM platform have been released and b) new data from the experiment is available for calibration. Calibration is a fairly tedious process in which unknown model parameters are changed until the results of the model match the data that has been previously measured. Often, changing one parameter results in the change of results produced by another parameter and so the process is quite iterative. This model is especially challenging because it includes three different plant functional groups opposed to a monoculture like maize. The APSIM maize model is calibrated and ready to simulate long-term changes in organic matter. 
+
+I plan to incorporate the model structure of APSIM into the soilR model platform to provide predictions from a suite of well-known soil carbon models. These predictions will provide a range of estimate for how much organic matter we need to add to Iowa soils in order to measure an increase. I have installed soilR and tested some of its functions, but since it is a coding program and does not have a user interface like APSIM, it is a new platform to learn. 
+
+
 
 
 #Budget Narrative  
