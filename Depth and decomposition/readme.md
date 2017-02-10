@@ -43,10 +43,8 @@ Two cores will be taken at time 0, a few days after the last application of Roun
 
 #####Step 1. First cutting 2016-07-27
 
-##Hey work please
-
 <img src="Images/selfie.png" width="300px" />
- <img src="Images/forbs.jpg" width="300px" /> <img src="Images/PF.jpg" width="300px" /> <img src="Images/before.jpg" width="300px" /> <img src="Images/after.jpg" width="300px" />
+ <img src="Images/forbs.png" width="300px" /> <img src="Images/PF.png" width="300px" /> <img src="Images/before.png" width="300px" /> <img src="Images/after.png" width="300px" />
 
 ### Convincing image for why litter bags are bad
 
