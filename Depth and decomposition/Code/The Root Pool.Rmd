@@ -1,5 +1,5 @@
 ---
-title: "What will it take to restore organic matter to Iowa's soils? "
+title: 'What will it take to restore organic matter to Iowa''s soils? '
 output:
   pdf_document: default
   html_notebook: default

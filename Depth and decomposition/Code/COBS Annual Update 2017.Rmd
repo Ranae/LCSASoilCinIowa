@@ -1,0 +1,140 @@
+---
+title: "COBS Update 2017-2-20"
+author: "Ranae Dietzel"
+date: "February 15, 2017"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+library(tidyverse)
+library(lubridate)
+library(plotrix)
+
+this_theme<-theme_bw()+
+  theme(#panel.grid.major = element_blank(),
+    #panel.grid.minor = element_blank(),
+    panel.background = element_blank(),
+    axis.line = element_line(),
+    legend.position='none', legend.title=element_blank(),
+    legend.text = element_text(size=12),
+    axis.title.x = element_text(size=22,vjust=-0.5),
+    axis.title.y = element_text(size=22,angle=90, vjust=1.2),
+    axis.text.x = element_text(colour="black", size=18),
+    axis.text.y = element_text(colour="black", size=18), 
+    strip.text = element_text(colour="black", size=18))
+
+theme_set(this_theme)
+```  
+
+##Objective of the project    
+As we move deeper into the soil and further from the soil surface, temperature, moisture, O2 availability, texture, pH, and even root tissue composition change. These environmental properties and their interactions with each other can be described as one factor: depth. There are large differences in the amount of organic matter with location in the soil profile due to both the amount of plant litter input and the effect of depth on decomposition rates and organic matter stabilization. Inputs can be easily measured and compared, but decomposition and the fate of its products are more difficult to study, especially below the soil surface.
+
+Depth is an emergent property that cannot be recreated in a laboratory, yet much of what we know about decomposition at depth is dependent upon laboratory studies with carefully controlled conditions. The rest of what we know about the effect of depth comes from in-field studies that used litter bags to measure decomposition. Litter bags introduce major problems relevant to decomposition, mainly that they restrict contact between soil and organic matter, greatly reducing the ability of microorganisms to reach and catabolize organic matter.
+
+This experiment seeks to examine the effect of depth on decomposition without physically controlling the components that make up depth and without creating an artificial environment such as that found inside litter bags. This examination will include analysis focused on the components that contribute to the depth effect.  
+
+##Locations and timing  
+
+Subplots were established in all prairie, fertilized prairie, and continuous corn plots during 2016.  
+
+\includegraphics[width=400pt]{../Images/plot design field level.png}  
+Figure 1. Location of decomposition subplots at COBS (blue).   
+
+\includegraphics[width=150pt]{../Images/plot design plot level.png}
+\includegraphics[width=250pt]{../Images/plot design subplot level.png}  
+Figure 2. Placement of subplot within plot (left) and core (number) and sensor (S) placement within subplot (right). 
+\vspace{24pt}
+
+Subplot establishment involved terminating all vegetation within the designated area at the peak of growth. Two soil cores (5 cm diam x 1 m depth) were extracted from each subplot shortly after vegetation termination (2017-8-15).  
+
+In **2017** when will I take samples?  
+
+##Data collected and to be collected  
+
+###Root pool mass and C/N content  
+
+The purpose of terminating vegetation was to create an undisturbed pool of (dead) organic matter that would begin to decompose. Decomposition will be tracked by measuring changes in the mass of this root organic matter pool over time. Soil cores collected in August were used to determine initial organic matter mass values.  
+
+###Soil C, N, and POM  
+Root-free soil was subsampled from these cores, has been air-dried, and awaits analysis.  
+
+###Subplot soil moisture and temperature  
+Each subplot has soil temperature and moisture sensors at 7.5, 25, 45, and 70 cm. Measurements are logged every hour.  
+
+##Brief summary of the recent results  
+
+```{r, include=FALSE}
+datain<-read_csv("../Data/2017-2-2COBS Root Sample Lab Data.csv")
+
+roots<-datain%>%
+     mutate(trt = ifelse((plot %in% c("12", "35", "21", "43")), "maize",
+                        ifelse((plot %in% c("13", "31", "24", "46")), "prairie",
+                               ifelse((plot %in% c("15", "32", "23", "41")), "fertilized_prairie", "nada"))))%>%
+  mutate(Root_g_m2 = (`root weight (g)`/.00203))%>%
+  group_by(trt, depth)%>%
+  summarise_each(funs(mean(., na.rm = TRUE), std.error(., na.rm = TRUE)))
+```
+
+```{r, fig.width = 4, fig.height=4.5}
+
+roots <- within(roots, trt <- ordered(trt, levels = c("maize", "fertilized_prairie", "prairie")))
+roots <- within(roots, depth <- ordered(depth, levels = rev(sort(unique(depth)))))
+
+desert<-c("#24019B", "#E06100", "#83304C")
+dodge=position_dodge(width=0.9)
+ggplot(roots, aes(x=depth, y = Root_g_m2_mean, fill=trt)) + 
+    geom_bar(stat = "identity", position = dodge) +
+    geom_errorbar(aes(ymax = Root_g_m2_mean + Root_g_m2_std.error, ymin=Root_g_m2_mean - Root_g_m2_std.error), position = dodge, width=0.2) +
+    #scale_x_reverse()+
+    coord_flip()+
+    scale_fill_manual(values = desert, breaks=c("maize", "fertilized_prairie", "prairie"), labels=c("Maize", "Fertilized Prairie", "Prairie"))+
+    guides(col = guide_legend(reverse = FALSE))+
+    labs(y = (expression(paste("Root (g m" ^ "-2",")"))),x = "Depth (cm)")+
+    theme(#panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank(),
+          panel.background = element_blank(),
+          axis.line = element_line(),
+          legend.position=c(.65,.35), legend.title=element_blank(), 
+          legend.key.size=unit(.65, "cm"), legend.text = element_text(size=12),
+          axis.title.x = element_text(size=12),
+          axis.title.y = element_text(size=12,angle=90),
+          axis.text.x = element_text(colour="black", size=12),
+          axis.text.y = element_text(colour="black", size=12))
+```  
+Figure 3. Initial root pool mass (2016-8-15).  
+
+```{r, whole core}
+datain%>%
+     mutate(trt = ifelse((plot %in% c("12", "35", "21", "43")), "maize",
+                        ifelse((plot %in% c("13", "31", "24", "46")), "prairie",
+                               ifelse((plot %in% c("15", "32", "23", "41")), "fertilized_prairie", "nada"))))%>%
+  mutate(Root_g_m2 = (`root weight (g)`/.00203))%>%
+  group_by(trt, plot)%>%
+  summarise(whole= sum(Root_g_m2))%>%
+  summarise_each(funs(mean(., na.rm = TRUE), std.error(., na.rm = TRUE)))%>%
+  ggplot(aes(x=trt, y=whole_mean))+
+  geom_bar(stat = "identity", position = dodge)
+```
+
+
+##Plans for 2017  
+##Needs for assistance  
+##Potential for collaboration  
+
+```{r check this out}
+datain%>%
+     mutate(trt = ifelse((plot %in% c("12", "35", "21", "43")), "maize",
+                        ifelse((plot %in% c("13", "31", "24", "46")), "prairie",
+                               ifelse((plot %in% c("15", "32", "23", "41")), "fertilized_prairie", "nada"))))%>%
+  mutate(Root_g_m2 = (`root weight (g)`/.00203))%>%
+  ggplot(aes(x=depth, y=Root_g_m2))+
+  geom_jitter()+
+  facet_wrap(~trt, scales = "free", nrow=3)
+```
+
+

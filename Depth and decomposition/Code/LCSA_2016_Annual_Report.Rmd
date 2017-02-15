@@ -1,0 +1,172 @@
+---
+title: "What will it take to restore organic matter to Iowa's soils? "
+output:
+  pdf_document: default
+  html_notebook: default
+  html_document: default
+---
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+library(tidyverse)
+library(lubridate)
+
+this_theme<-theme_bw()+
+  theme(#panel.grid.major = element_blank(),
+    #panel.grid.minor = element_blank(),
+    panel.background = element_blank(),
+    axis.line = element_line(),
+    legend.position='none', legend.title=element_blank(),
+    legend.text = element_text(size=12),
+    axis.title.x = element_text(size=22,vjust=-0.5),
+    axis.title.y = element_text(size=22,angle=90, vjust=1.2),
+    axis.text.x = element_text(colour="black", size=18),
+    axis.text.y = element_text(colour="black", size=18), 
+    strip.text = element_text(colour="black", size=18))
+
+theme_set(this_theme)
+```
+
+\includegraphics[width=500pt]{../Images/shoots.png}
+ 
+\vspace{24pt}
+
+## Grant Number **E2016-13**
+### Proposal submitted November 3rd, 2015
+
+### *Principal Investigator:*  
+Ranae Dietzel  
+Postdoctoral Research Associate  
+3403 Agronomy Hall  
+Iowa State University  
+Ames, Iowa 50011  
+**515-291-4702**  
+rdietzel@iastate.edu
+
+## Amount requested for renewal year: **$15,905**
+
+
+
+\vspace{24pt}
+
+\includegraphics[width=500pt]{../Images/roots.png}
+
+\newpage
+
+#Scope of Work  
+Work plans for coming year, where I am in original timeline, what objectives and strategies will be employed, and who will do the work
+
+This project has two major activities 1) Field experiment measuring decomposition rates in materials with different carbon and nitrogen contents and 2) Organic matter decomposition simulations and models inter-comparison. 
+
+In the coming year, I will measure remaining mass of prairie, fertilized prairie, and maize roots at two points to determine the rate at which mass is being lost (decomposed). The decomposition rate will be linked to both soil depth and carbon and nitrogen content of the original root material. Additional measurements will be made in 2018.
+
+I am using the Agricultural Production Systems Simulator (APSIM) for the model inter comparison and have a version of the model that is very well-calibrated for my study site for maize root decomposition. However, there have been several improvements made in the prairie version of APSIM and I am currently recalibrating the model for use in the model inter comparison. This should be done by the end of February, at which point I will move on to incorporating APSIM's structure with other widely-used soil carbon models to perform a model inter comparison using soilR, an R-based modeling platform.  
+
+ 
+#Brief project summary
+
+##Experimental plots 
+The priority for the first year was to establish experimental subplots used to study the decomposition of organic matter with different carbon and nitrogen contents at different soil depths. Previous work at this site has shown prairie, fertilized prairie, and maize roots have very different carbon and nitrogen content, but the roots must be dead to start decomposition and start this experiment. 
+
+I waited until plant systems reached peak root biomass and then measured 6 ft x 6ft areas in four replicates of three treatments (12 subplots overall). All vegetation was at least 5 ft tall at this point, so I used a gas-powered weed trimmer to mow all vegetation in these subplots. I then waited nine days for some vegetation to grow back and sprayed glyphosate to terminate vegetation in the area. I continued to check for new growth over the next three weeks, applying glyphosate two more times. 
+
+When all vegetation was terminated, I collected initial root samples to determine the starting mass of organic matter (dead roots) in the subplots. Root samples were collected by bringing a truck-mounted hydraulic soil probe with a 2 inch diameter shaft to each subplot and extracting two 6 ft long soil cores from each subplot. Each core was sectioned into 8 inch portions and bagged on-site. 
+
+Temperature and moisture are major factors in determining the rate of decomposition. We expect differences in temperature and moisture with soil depth. In order to quantify these differences, we installed soil moisture and temperature sensors at 3, 10, 20 and 30 inch depths in each subplot. Sensors were installed by using a gas-powered handheld auger to drill down to 2.5 ft and remove all the soil. Sensors were inserted into the soil profile and soil was replaced in the hole. In each subplot, sensors were plugged into a data logger that was programmed to track moisture and temperature every hour. 
+
+To prevent new roots from entering the area, four plastic partitions per subplot were cut to the dimension of 6 ft long x 6 inches wide. Partitions will be installed in the soil in the spring.
+
+\includegraphics[width=230pt]{../Images/PF.jpg}
+\includegraphics[width=174pt]{../Images/core.jpg}  
+
+
+Soil cores were brought from the field into the lab. Soil was emptied into mesh tubes and run through a machine that both dunked the tubes in water and sprayed the tubes with high-pressure jets for 3 hours in batches of eight samples (120 samples total) to remove clay and silt from the samples. Each sample was dried in the tube and then dumped into a tub of water where the sand sank and the roots and organic matter floated to the top. Roots and organic matter were poured off onto a sieve and dried again. Organic matter was separated from roots by using tweezers to separate by hand material that looked like a root from material that did not look like a root. The roots were finally weighed to determine mass (Fig. 1). Root material is currently being ground so it can be submitted to determine carbon and nitrogen content.  
+
+
+```{r, include=FALSE}
+datain<-read_csv("../Data/2017-2-2COBS Root Sample Lab Data.csv")
+
+roots<-datain%>%
+     mutate(trt = ifelse((plot %in% c("12", "35", "21", "43")), "maize",
+                        ifelse((plot %in% c("13", "31", "24", "46")), "prairie",
+                               ifelse((plot %in% c("15", "32", "23", "41")), "fertilized_prairie", "nada"))))%>%
+  mutate(Root_g_m2 = (`root weight (g)`/.00203))%>%
+  group_by(trt, depth)%>%
+  summarise_each(funs(mean(., na.rm = TRUE)))
+  
+head(roots)
+```
+
+```{r, fig.width = 4, fig.height=4.5}
+
+roots <- within(roots, trt <- ordered(trt, levels = c("maize", "fertilized_prairie", "prairie")))
+roots <- within(roots, depth <- ordered(depth, levels = rev(sort(unique(depth)))))
+
+desert<-c("#24019B", "#E06100", "#83304C")
+ggplot(roots, aes(x=depth, y = Root_g_m2, fill=trt)) + 
+    geom_bar(stat = "identity", position = "dodge") +
+    #geom_errorbar(aes(ymax = poxconc + poxconcse, ymin=poxconc - poxconcse), position = dodge, width=0.25) +
+    #scale_x_reverse()+
+    coord_flip()+
+    scale_fill_manual(values = desert, breaks=c("maize", "fertilized_prairie", "prairie"), labels=c("Maize", "Fertilized Prairie", "Prairie"))+
+    guides(col = guide_legend(reverse = FALSE))+
+    labs(y = (expression(paste("Root (g m" ^ "-2",")"))),x = "Depth (cm)")+
+    theme(#panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank(),
+          panel.background = element_blank(),
+          axis.line = element_line(),
+          legend.position=c(.65,.35), legend.title=element_blank(), 
+          legend.key.size=unit(.65, "cm"), legend.text = element_text(size=12),
+          axis.title.x = element_text(size=12),
+          axis.title.y = element_text(size=12,angle=90),
+          axis.text.x = element_text(colour="black", size=12),
+          axis.text.y = element_text(colour="black", size=12))
+```  
+
+Figure 1. Root mass at initiation of experiment. 
+
+\newpage  
+##Organic matter simulations  
+
+I have previously made significant changes to a pasture model within the APSIM platform to create an APSIM prairie model. This prairie model is crucial to simulating changes in organic matter over long periods of time. In order to show that the results produced by this model are feasible, I am submitting the work for peer review and am currently working on a manuscript detailing model calibration while simultaneously calibrating the model due to a) new versions of the APSIM platform have been released and b) new data from the experiment is available for calibration. Calibration is a fairly tedious process in which unknown model parameters are changed until the results of the model match the data that has been previously measured. Often, changing one parameter results in the change of results produced by another parameter and so the process is quite iterative. This model is especially challenging because it includes three different plant functional groups opposed to a monoculture like maize. The APSIM maize model is calibrated and ready to simulate long-term changes in organic matter.  
+
+I plan to incorporate the model structure of APSIM into the soilR model platform to provide predictions from a suite of well-known soil carbon models. These predictions will provide a range of estimate for how much organic matter we need to add to Iowa soils in order to measure an increase. I have installed soilR and tested some of its functions, but since it is a coding program and does not have a user interface like APSIM, it is a new platform to learn. 
+\includegraphics[width=400pt]{../Images/soil_c_sims.png}  
+
+Figure 2. Initial soil organic carbon projections in maize and prairie systems over 50 years.  
+
+This was the first year of a three-year project, and it is off to a very good start. While the processes we hope to capture in the field and the processes we will simulate on the computer both require time, we have not run into any problems and are in a good position to carry out the remaining 2/3 of the project. 
+
+#Technical Report  
+As expected, we found that unfertilized prairie has the greatest root mass, followed by fertilized prairie, and then maize. We expect maize roots to decompose the quickest, followed by fertilized prairie, and then unfertilized prairie. Our first indication of this relationship will be when roots are measured again this spring. 
+
+Initial modeling shows that all systems lose soil carbon over time, although prairie soil carbon loss is slower than maize soil carbon loss. However, until our model is compared with others, we will not have a good idea of the reliability of predictions projected out over 50 years. 
+
+\newpage
+
+#Budget Narrative  
+I have funds carried over due to the fact that the undergrad assisting me had the wrong account number on her timecard. I will start paying her on the LCSA account for the time she has already spent processing roots. This time was according to budget ~ 225 hours at $10.50 ($2,363). According to Deborah Hop, I will have some 2016 funds remaining after accounting for these costs. If possible, I would like to use any other carry-over funds towards carbon and nitrogen content analysis of the root material collected in 2016.  
+
+*Salary/Hourly*:
+We are requesting 20% salary per year for PI Dietzel, who will run the decomposition model simulations, take field samples, build the interactive online visualizations, and write the press and scientific articles ($10,100/year).  
+
+We are also requesting pay for 225 hours per year at $10.50/hr for an hourly worker to process field samples in the lab by separating roots from soil ($2,363/year).  
+
+*Payroll Benefits*:
+We are also requesting funds for benefits for PI Dietzel at 33%, resulting in the need for $3,333.00/year.
+
+The benefit rate for hourlies is 4.7%, resulting in a need of $109.00 for each year. 
+
+#Budget  
+Salary and Wages: $12,463  
+Fringe Benefits:  $ 3,442
+
+See attached spreadsheet  
+
