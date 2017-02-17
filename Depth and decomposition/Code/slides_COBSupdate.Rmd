@@ -1,9 +1,14 @@
 ---
-title: "COBS Update on Depth and Decomposition"
+title: "COBS Update"
 author: "Ranae Dietzel"
-date: "February 17, 2017"
-output: pdf_document
+ratio: 16x10
+output:
+  rmdshower::shower_presentation:
+    self_contained: false
+    katex: true
+    theme: ribbon
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
@@ -32,20 +37,19 @@ theme_set(this_theme)
 ```  
 
 ##Objective of the project    
-As we move deeper into the soil and further from the soil surface, temperature, moisture, O2 availability, texture, pH, and even root tissue composition change. These environmental properties and their interactions with each other can be described as one factor: depth. There are large differences in the amount of organic matter with location in the soil profile due to both the amount of plant litter input and the effect of depth on decomposition rates and organic matter stabilization. Inputs can be easily measured and compared, but decomposition and the fate of its products are more difficult to study, especially below the soil surface.
-
-Depth is an emergent property that cannot be recreated in a laboratory, yet much of what we know about decomposition at depth is dependent upon laboratory studies with carefully controlled conditions. The rest of what we know about the effect of depth comes from in-field studies that used litter bags to measure decomposition. Litter bags introduce major problems relevant to decomposition, mainly that they restrict contact between soil and organic matter, greatly reducing the ability of microorganisms to reach and catabolize organic matter.
-
-This experiment seeks to examine the effect of depth on decomposition without physically controlling the components that make up depth and without creating an artificial environment such as that found inside litter bags. This examination will include analysis focused on the components that contribute to the depth effect.  
+Quantify the effect of depth on decomposition. 
 
 ##Locations and timing  
 
 Subplots were established in all prairie, fertilized prairie, and continuous corn plots during 2016.  
 
-\includegraphics[width=400pt]{../Images/plot design field level.png}  
+<center><img src="../Images/plot design field level.png"/></center>
 Figure 1. Location of decomposition subplots at COBS (blue).   
 
-\includegraphics[width=150pt]{../Images/plot design plot level.png}
+## 
+<center><img src="../Images/plot design plot level.png"/></center>
+
+## 
 \includegraphics[width=250pt]{../Images/plot design subplot level.png}  
 Figure 2. Placement of subplot within plot (left) and core (number) and sensor (S) placement within subplot (right). 
 \vspace{24pt}
@@ -136,35 +140,3 @@ datain%>%
           axis.text.x = element_blank(),
           axis.text.y = element_text(colour="black", size=12))
 ```  
-
-Figure 3. Root pool mass measured at initiation of the experiment (2017-8-15) for 20 cm increments (left) and the entire 1 m depth (right).
-
-
-##Plans for 2017  
-
-I am going to install shallow partitions (6 inch depth) around each subplot to limit root growth into the plots. I am also going to cover the subplots with landscaping fabric to limit how often I need to go spray glyphosate.  
-
-I plan to take 2 more sets of 1 m soil cores in 2017. The first will be in June, the second in November. I plan to maintain soil sensors in all subplots. 
-
-##Needs for assistance  
-
-I don't need assistance, but I do need to use the elutriator for the rest of my life. 
-
-The dataloggers are in the way during field operations. The posts are sitting in PVC and can easily be lifted up removed and the sensors can be unplugged. Let me know when something is going to happen and I can go out and get these out of the way. 
-
-##Potential for collaboration  
-
-I have a good amount of air-dried soil from the first cores. If there are additional analyses you would like to have run, let's talk about it. You can find everything I generate from this project (data, code, text) on GitHub (https://github.com/Ranae/LCSASoilCinIowa/tree/master/Depth%20and%20decomposition).
-
-```{r check this out, include=FALSE}
-datain%>%
-     mutate(trt = ifelse((plot %in% c("12", "35", "21", "43")), "corn",
-                        ifelse((plot %in% c("13", "31", "24", "46")), "prairie",
-                               ifelse((plot %in% c("15", "32", "23", "41")), "fertilized_prairie", "nada"))))%>%
-  mutate(Root_g_m2 = (`root weight (g)`/.00203))%>%
-  ggplot(aes(x=depth, y=Root_g_m2))+
-  geom_jitter()+
-  facet_wrap(~trt, scales = "free", nrow=3)
-```
-
-
