@@ -43,20 +43,25 @@ Quantify the effect of depth on decomposition.
 
 Subplots were established in all prairie, fertilized prairie, and continuous corn plots during 2016.  
 
-<center><img src="../Images/plot design field level.png"/></center>
+<center><img src="../Images/plot_design_field_level.png"/></center>
+![cmon](../Images/plot_design_field_level.png)
+
 Figure 1. Location of decomposition subplots at COBS (blue).   
 
 ## 
-<center><img src="../Images/plot design plot level.png"/></center>
+<center><img src="../Images/plot_design_plot_level.png"/></center>
 
 ## 
-\includegraphics[width=250pt]{../Images/plot design subplot level.png}  
+\includegraphics[width=250pt]{../Images/plot_design_subplot_level.png}  
 Figure 2. Placement of subplot within plot (left) and core (number) and sensor (S) placement within subplot (right). 
 \vspace{24pt}
 
 Subplot establishment involved terminating all vegetation within the designated area at the peak of growth. Two soil cores (5 cm diam x 1 m depth) were extracted from each subplot shortly after vegetation termination (2017-8-15).  
 
- 
+##  
+## Your turn { .cover .white }
+
+<img src="../Images/forbs.jpg" class="cover height">
 
 ##Data collected and to be collected  
 
